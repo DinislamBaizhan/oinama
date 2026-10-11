@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Oinama: privacy policy</title>
+<meta name="description" content="Oinama privacy policy: what the app sends to translation services and what stays on your computer.">
+<meta name="theme-color" content="#0d1522">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;800&family=Noto+Sans+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="bar">
+    <a class="logo" href="index.html"><span class="logo-mark">Aa</span><span>Oinama</span></a>
+    <div class="langs" role="group" aria-label="Тіл / Язык / Language">
+      <button type="button" id="lang-kk" data-set="kk" aria-pressed="true">Қаз</button>
+      <button type="button" id="lang-ru" data-set="ru" aria-pressed="false">Рус</button>
+      <button type="button" id="lang-en" data-set="en" aria-pressed="false">Eng</button>
+    </div>
+  </header>
+
+  <main class="policy">
+    <!-- Kazakh -->
+    <article lang="kk">
+      <h1>Құпиялылық саясаты</h1>
+      <p class="muted">Соңғы өзгеріс: 2026 жылғы 11 қазан</p>
+      <p>Oinama — Windows-қа арналған тегін бағдарлама: экрандағы ағылшын сөздерін қазақшаға аударады. Бағдарламада тіркелу, жарнама және аналитика жоқ. Біз сіз туралы деректерді жинамаймыз және өз серверіміз жоқ.</p>
+      <h2>Компьютеріңізде не қалады</h2>
+      <ul>
+        <li>Экран суреті мен мәтінді тану (OCR) тек компьютеріңізде жасалады. Экран суреті ешқайда жіберілмейді.</li>
+        <li>Баптаулар, сақталған сөздер, олар кездескен жердің суреттері, аударма кэші және қате журналы <code>%APPDATA%\OcrKk</code> қалтасында сақталады.</li>
+        <li>Gemini, APInex және DeepL кілттері Windows DPAPI арқылы шифрланып, тек сіздің Windows пайдаланушыңызға ғана ашылады.</li>
+      </ul>
+      <h2>Интернетке не жіберіледі</h2>
+      <p>Сөзді аудару үшін бағдарлама сіз меңзеген сөзді немесе тіркесті және оның айналасындағы мәтінді (әдетте бір-екі сөйлем) таңдалған аударма қызметіне жібереді:</p>
+      <ul>
+        <li><b>Google Gemini</b> (generativelanguage.googleapis.com), өз кілтіңізбен. Тегін Gemini тарифінде Google бұл мәтінді өз модельдерін жақсарту үшін пайдалануы мүмкін.</li>
+        <li><b>APInex</b> (apinex.bond), өз кілтіңізбен.</li>
+        <li><b>DeepL</b> (api-free.deepl.com, api.deepl.com), өз кілтіңізбен.</li>
+        <li><b>MyMemory</b> (api.mymemory.translated.net), кілтсіз.</li>
+        <li>Сөздіктер: <b>freedictionaryapi.com</b> және, баптауда қосылса, <b>eng-kaz.kz</b>; оларға тек сөздің өзі жіберіледі.</li>
+      </ul>
+      <p>Бұл мәтінді әр қызмет өз құпиялылық саясаты бойынша өңдейді. Қай қызметтерді қолдануды баптауда өзіңіз таңдайсыз. Құпия мәтін (құпиясөз, хат) көрінетін экранда сөзді меңземеңіз.</p>
+      <h2>Деректерді жою</h2>
+      <p>Баптаулардағы «Кэшті тазалау» батырмасы аударма кэшін өшіреді. Барлық деректерді жою үшін бағдарламаны жойыңыз және <code>%APPDATA%\OcrKk</code> қалтасын өшіріңіз (Microsoft Store нұсқасында Windows бұл деректерді бағдарламамен бірге өзі өшіреді).</p>
+      <h2>Балалар</h2>
+      <p>Бағдарлама жеке деректер сұрамайды және балалар туралы ақпарат жинамайды.</p>
+      <h2>Байланыс</h2>
+      <p>Сұрақтар болса: <a href="https://t.me/Aspanavt" target="_blank" rel="noopener noreferrer">Telegram @Aspanavt</a>. Саясат өзгерсе, осы бет жаңарады.</p>
+    </article>
+
+    <!-- Russian -->
+    <article lang="ru">
+      <h1>Политика конфиденциальности</h1>
+      <p class="muted">Последнее изменение: 11 октября 2026 года</p>
+      <p>Oinama — бесплатная программа для Windows, которая переводит английские слова на экране на казахский. В программе нет регистрации, рекламы и аналитики. Мы не собираем данные о вас и не держим своих серверов.</p>
+      <h2>Что остаётся на вашем компьютере</h2>
+      <ul>
+        <li>Снимок экрана и распознавание текста (OCR) делаются только на компьютере. Снимок экрана никуда не отправляется.</li>
+        <li>Настройки, сохранённые слова, картинки мест, где они встретились, кэш переводов и журнал ошибок хранятся в папке <code>%APPDATA%\OcrKk</code>.</li>
+        <li>Ключи Gemini, APInex и DeepL зашифрованы с помощью Windows DPAPI и открываются только для вашей учётной записи Windows.</li>
+      </ul>
+      <h2>Что отправляется в интернет</h2>
+      <p>Чтобы перевести слово, программа отправляет выбранному сервису перевода слово или фразу под курсором и текст вокруг неё (обычно одно-два предложения):</p>
+      <ul>
+        <li><b>Google Gemini</b> (generativelanguage.googleapis.com), с вашим ключом. На бесплатном тарифе Gemini Google может использовать этот текст для улучшения своих моделей.</li>
+        <li><b>APInex</b> (apinex.bond), с вашим ключом.</li>
+        <li><b>DeepL</b> (api-free.deepl.com, api.deepl.com), с вашим ключом.</li>
+        <li><b>MyMemory</b> (api.mymemory.translated.net), без ключа.</li>
+        <li>Словари: <b>freedictionaryapi.com</b> и, если включено в настройках, <b>eng-kaz.kz</b>; туда уходит только само слово.</li>
+      </ul>
+      <p>Каждый сервис обрабатывает этот текст по своей политике конфиденциальности. Какие сервисы использовать, вы выбираете в настройках. Не наводите на слова, когда на экране видны секретные данные (пароли, личная переписка).</p>
+      <h2>Удаление данных</h2>
+      <p>Кнопка «Очистить кэш» в настройках удаляет кэш переводов. Чтобы удалить всё, удалите программу и папку <code>%APPDATA%\OcrKk</code> (в версии из Microsoft Store Windows удаляет эти данные вместе с программой).</p>
+      <h2>Дети</h2>
+      <p>Программа не запрашивает личных данных и не собирает сведений о детях.</p>
+      <h2>Связь</h2>
+      <p>Вопросы: <a href="https://t.me/Aspanavt" target="_blank" rel="noopener noreferrer">Telegram @Aspanavt</a>. Если политика изменится, эта страница будет обновлена.</p>
+    </article>
+
+    <!-- English -->
+    <article lang="en">
+      <h1>Privacy policy</h1>
+      <p class="muted">Last updated: October 11, 2026</p>
+      <p>Oinama is a free Windows app that translates English words on your screen into Kazakh. It has no sign-up, no ads and no analytics. We do not collect data about you and run no servers of our own.</p>
+      <h2>What stays on your computer</h2>
+      <ul>
+        <li>The screenshot and the text recognition (OCR) happen on your computer only. Screenshots are never sent anywhere.</li>
+        <li>Settings, saved words, pictures of where you met them, the translation cache and the error log are kept in <code>%APPDATA%\OcrKk</code>.</li>
+        <li>Your Gemini, APInex and DeepL keys are encrypted with Windows DPAPI and can only be read by your Windows account.</li>
+      </ul>
+      <h2>What is sent over the internet</h2>
+      <p>To translate a word, the app sends the word or phrase under the pointer and the text around it (usually one or two sentences) to the translation service you use:</p>
+      <ul>
+        <li><b>Google Gemini</b> (generativelanguage.googleapis.com), with your own key. On the free Gemini tier, Google may use this text to improve its models.</li>
+        <li><b>APInex</b> (apinex.bond), with your own key.</li>
+        <li><b>DeepL</b> (api-free.deepl.com, api.deepl.com), with your own key.</li>
+        <li><b>MyMemory</b> (api.mymemory.translated.net), no key.</li>
+        <li>Dictionaries: <b>freedictionaryapi.com</b> and, if turned on in Settings, <b>eng-kaz.kz</b>; they receive only the word itself.</li>
+      </ul>
+      <p>Each service handles that text under its own privacy policy. You choose which services to use in Settings. Do not hover over words while secrets (passwords, private messages) are on screen.</p>
+      <h2>Deleting your data</h2>
+      <p>"Clear cache" in Settings deletes the translation cache. To delete everything, uninstall the app and delete <code>%APPDATA%\OcrKk</code> (for the Microsoft Store version, Windows removes this data together with the app).</p>
+      <h2>Children</h2>
+      <p>The app asks for no personal information and collects no information about children.</p>
+      <h2>Contact</h2>
+      <p>Questions: <a href="https://t.me/Aspanavt" target="_blank" rel="noopener noreferrer">Telegram @Aspanavt</a>. If this policy changes, this page will be updated.</p>
+    </article>
+  </main>
+
+  <footer>
+    <span><a href="index.html">Oinama</a> · Windows 11</span>
+  </footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Oinama</title>
+<meta name="description" content="Oinama: free screen translator. Hover over an English word in a game, film or app and get a Kazakh translation.">
+<meta name="theme-color" content="#0d1522">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;800&family=Noto+Sans+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="bar">
+    <div class="logo"><span class="logo-mark">Aa</span><span>Oinama</span></div>
+    <div class="langs" role="group" aria-label="Тіл / Язык / Language">
+      <button type="button" id="lang-kk" data-set="kk" aria-pressed="true">Қаз</button>
+      <button type="button" id="lang-ru" data-set="ru" aria-pressed="false">Рус</button>
+      <button type="button" id="lang-en" data-set="en" aria-pressed="false">Eng</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <div class="free">
+        <span class="chip gold"><span lang="kk">Толығымен тегін</span><span lang="ru">Полностью бесплатно</span><span lang="en">Completely free</span></span>
+        <span class="chip">Windows 11</span>
+        <span class="chip"><span lang="kk">Тіркелусіз</span><span lang="ru">Без регистрации</span><span lang="en">No sign-up</span></span>
+      </div>
+      <h1>
+        <span lang="kk">Ойнап отырып <em>ағылшынша</em> үйрен</span>
+        <span lang="ru">Учи <em>английский</em>, пока играешь</span><span lang="en">Learn <em>English</em> while you play</span>
+      </h1>
+      <p class="lead">
+        <span lang="kk">Oinama кез келген ойында, фильмде және бағдарламада ағылшын мәтінін қазақшаға аударады. Сөздің үстіне меңзерді апарсаңыз болғаны: аударма мен түсініктеме бірден шығады.</span>
+        <span lang="ru">Oinama переводит английский текст с любого экрана на казахский: в играх, фильмах и программах. Наведите курсор на слово, и сразу появятся перевод и объяснение.</span><span lang="en">Oinama translates English text from any screen into Kazakh: in games, films and apps. Hover over a word and you instantly get the translation and an explanation.</span>
+      </p>
+      <div class="cta">
+        <a class="btn primary" id="dl-top" href="#install">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M6 10l6 6 6-6M4 21h16"/></svg>
+          <span lang="kk">Тегін жүктеу</span><span lang="ru">Скачать бесплатно</span><span lang="en">Download for free</span>
+        </a>
+        <a class="btn ghost" href="#how"><span lang="kk">Қалай жұмыс істейді</span><span lang="ru">Как это работает</span><span lang="en">How it works</span></a>
+      </div>
+    </div>
+
+    <div>
+      <div class="screen" id="screen">
+        <svg class="land" viewBox="0 0 800 300" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 140 L90 70 L170 120 L260 40 L360 115 L450 60 L560 125 L650 55 L740 105 L800 80 L800 300 L0 300Z" fill="#2c2f55"/>
+          <path d="M0 190 L120 140 L240 175 L380 120 L520 170 L640 135 L800 165 L800 300 L0 300Z" fill="#1f2340"/>
+          <path d="M0 240 C200 215 420 230 800 210 L800 300 L0 300Z" fill="#141831"/>
+          <g fill="#0f1226"><path d="M600 212 l18-30 18 30z"/><path d="M590 214h56v10h-56z"/><circle cx="618" cy="176" r="3" fill="#f3b733"/></g>
+        </svg>
+        <div class="frozen"><i></i><span lang="kk">Қатырылды · Esc — ойынға оралу</span><span lang="ru">Заморожено · Esc — в игру</span><span lang="en">Frozen · Esc to return to the game</span></div>
+        <div class="dialog">
+          <div class="speaker">Old Batyr</div>
+          <div class="line" id="line">
+            <button type="button" class="w" data-w="grab">Grab</button>
+            <button type="button" class="w" data-w="your">your</button>
+            <button type="button" class="w on" data-w="sword">sword.</button>
+            <button type="button" class="w" data-w="we">We</button>
+            <button type="button" class="w" data-w="rideout">ride out</button>
+            <button type="button" class="w" data-w="dawn">at dawn.</button>
+          </div>
+        </div>
+        <div class="pop" id="pop" role="status" aria-live="polite">
+          <div class="en"><span id="p-en">sword</span><span class="ipa" id="p-ipa">/sɔːd/</span><span class="tag" id="p-tag">noun</span></div>
+          <div class="kk" id="p-kk">қылыш; семсер</div>
+          <div class="row">
+            <span>▶ <span lang="kk">Айту</span><span lang="ru">Произнести</span><span lang="en">Speak</span></span>
+            <span>★ <span lang="kk">Сақтау</span><span lang="ru">Сохранить</span><span lang="en">Save</span></span>
+            <span><span lang="kk">Толығырақ ▾</span><span lang="ru">Подробнее ▾</span><span lang="en">More ▾</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="hint small">
+        <span lang="kk">Көріп көріңіз: диалогтағы сөздердің үстіне меңзерді апарыңыз.</span>
+        <span lang="ru">Попробуйте: наведите курсор на слова в диалоге.</span><span lang="en">Try it: hover over the words in the dialogue.</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- WHY -->
+<section class="block" id="why">
+  <div class="wrap">
+    <div class="eyebrow"><span lang="kk">Аударма сапасы</span><span lang="ru">Качество перевода</span><span lang="en">Translation quality</span></div>
+    <h2><span lang="kk">Сөздерді емес, мағынаны аударады</span><span lang="ru">Переводит смысл, а не отдельные слова</span><span lang="en">Translates meaning, not just single words</span></h2>
+    <p class="muted why-text"><span lang="kk">Тегін AI мәнмәтінді, тұрақты тіркестер мен идиомаларды ескереді және аударманы түсіндіріп береді. Шектеусіз, төлемсіз.</span><span lang="ru">Бесплатный AI учитывает контекст, устойчивые выражения и идиомы и объясняет перевод. Без лимитов и оплаты.</span><span lang="en">Free AI takes context, set phrases and idioms into account and explains the translation. No limits, no payment.</span></p>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="block" id="how">
+  <div class="wrap">
+    <div class="eyebrow"><span lang="kk">Қалай жұмыс істейді</span><span lang="ru">Как это работает</span><span lang="en">How it works</span></div>
+    <h2><span lang="kk">Төрт қадам, ойыннан шықпай</span><span lang="ru">Четыре шага, не выходя из игры</span><span lang="en">Four steps without leaving the game</span></h2>
+    <div class="steps">
+      <div class="step"><div class="key">Alt+Q</div><h3><span lang="kk">Экранды қатырыңыз</span><span lang="ru">Заморозьте экран</span><span lang="en">Freeze the screen</span></h3><p><span lang="kk">Ойын үзіліске қойылады, бағдарлама экрандағы ағылшын мәтінін таниды.</span><span lang="ru">Игра встаёт на паузу, программа распознаёт английский текст на экране.</span><span lang="en">The game pauses and the program recognizes the English text on screen.</span></p></div>
+      <div class="step"><div class="key"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3l14 8-6 1.5L10 19z"/></svg></div><h3><span lang="kk">Сөзге меңзерді апарыңыз</span><span lang="ru">Наведите на слово</span><span lang="en">Hover over a word</span></h3><p><span lang="kk">Сәл кідірсеңіз, аудармасы бар карточка шығады.</span><span lang="ru">Задержите курсор, и появится карточка с переводом.</span><span lang="en">Hold the cursor for a moment and a card with the translation appears.</span></p></div>
+      <div class="step"><div class="key">★</div><h3><span lang="kk">Сөзді сақтаңыз</span><span lang="ru">Сохраните слово</span><span lang="en">Save the word</span></h3><p><span lang="kk">Бір басумен «Менің сөздерім» тізіміне түседі.</span><span lang="ru">Одним нажатием оно попадёт в «Мои слова».</span><span lang="en">One click adds it to “My words”.</span></p></div>
+      <div class="step"><div class="key">Esc</div><h3><span lang="kk">Ойынға оралыңыз</span><span lang="ru">Вернитесь в игру</span><span lang="en">Back to the game</span></h3><p><span lang="kk">Ойын тоқтаған жерінен жалғасады.</span><span lang="ru">Игра продолжится с того же места.</span><span lang="en">The game continues from where it stopped.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="block" id="features">
+  <div class="wrap">
+    <div class="eyebrow"><span lang="kk">Мүмкіндіктер</span><span lang="ru">Возможности</span><span lang="en">Features</span></div>
+    <h2><span lang="kk">Ойыншыға ыңғайлы</span><span lang="ru">Удобно игроку</span><span lang="en">Built for players</span></h2>
+    <div class="feat">
+      <div><div class="num">13 000+</div><h3><span lang="kk">Офлайн сөздік</span><span lang="ru">Офлайн-словарь</span><span lang="en">Offline dictionary</span></h3><p><span lang="kk">Бағдарламаның ішінде, интернетсіз жұмыс істейді.</span><span lang="ru">Встроен в программу и работает без интернета.</span><span lang="en">Built into the program and works without internet.</span></p></div>
+      <div><div class="num">AI</div><h3><span lang="kk">Тіркестер мен сөйлемдер</span><span lang="ru">Фразы и предложения</span><span lang="en">Phrases and sentences</span></h3><p><span lang="kk">Мәнмәтінмен, идиомалар мағынасы бойынша аударылады: Gemini, APInex, DeepL немесе MyMemory арқылы.</span><span lang="ru">Переводятся с учётом контекста, идиомы по смыслу: через Gemini, APInex, DeepL или MyMemory.</span><span lang="en">Translated in context, idioms by meaning: via Gemini, APInex, DeepL or MyMemory.</span></p></div>
+      <div><div class="num">⏸</div><h3><span lang="kk">Ойын үзіліске қойылады</span><span lang="ru">Пауза в игре</span><span lang="en">Game pause</span></h3><p><span lang="kk">Оқып жатқанда ешкім шабуыл жасамайды. Қаласаңыз, өшіріңіз.</span><span lang="ru">Пока вы читаете, вас никто не атакует. При желании отключается.</span><span lang="en">While you read, nobody attacks you. Can be turned off.</span></p></div>
+      <div><div class="num">Қаз · Рус · Eng</div><h3><span lang="kk">Баптаулар</span><span lang="ru">Настройки</span><span lang="en">Settings</span></h3><p><span lang="kk">Үш тілде интерфейс, өз пернеңіз, ашық және қараңғы тақырып.</span><span lang="ru">Интерфейс на трёх языках, своя горячая клавиша, светлая и тёмная тема.</span><span lang="en">Interface in three languages, your own hotkey, light and dark theme.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTALL -->
+<section class="block" id="install">
+  <div class="wrap install">
+    <div>
+      <div class="eyebrow"><span lang="kk">Орнату</span><span lang="ru">Установка</span><span lang="en">Installation</span></div>
+      <h2><span lang="kk">Бір файл, орнатусыз</span><span lang="ru">Один файл, без установщика</span><span lang="en">One file, no installer</span></h2>
+      <ol class="ins">
+        <li><div><b><span lang="kk">OcrKk.exe жүктеңіз</span><span lang="ru">Скачайте OcrKk.exe</span><span lang="en">Download OcrKk.exe</span></b><span lang="kk">Шамамен 80 МБ.</span><span lang="ru">Около 80 МБ.</span><span lang="en">About 80 MB.</span></div></li>
+        <li><div><b><span lang="kk">Іске қосыңыз</span><span lang="ru">Запустите</span><span lang="en">Run it</span></b><span lang="kk">Windows ескерту көрсетсе, «Толығырақ», сосын «Бәрібір іске қосу». Белгіше сағаттың жанындағы науада пайда болады.</span><span lang="ru">Если Windows покажет предупреждение, нажмите «Подробнее», затем «Выполнить в любом случае». Значок появится в трее возле часов.</span><span lang="en">If Windows shows a warning, click “More info”, then “Run anyway”. The icon appears in the tray next to the clock.</span></div></li>
+        <li><div><b><span lang="kk">Ойында Alt+Q басыңыз</span><span lang="ru">Нажмите Alt+Q в игре</span><span lang="en">Press Alt+Q in the game</span></b><span lang="kk">Тіл мен баптауларды науадағы белгіше арқылы өзгертесіз.</span><span lang="ru">Язык и настройки меняются через значок в трее.</span><span lang="en">Language and settings are changed from the tray icon.</span></div></li>
+      </ol>
+      <div class="pending" id="dl-pending">
+        <span lang="kk">Жүктеу сілтемесі жақында осында пайда болады.</span>
+        <span lang="ru">Ссылка на скачивание скоро появится здесь.</span><span lang="en">The download link will appear here soon.</span>
+      </div>
+      <div class="cta" id="dl-ready" hidden>
+        <a class="btn primary" id="dl-bottom" href="#" target="_blank" rel="noopener noreferrer"><span lang="kk">OcrKk.exe жүктеу</span><span lang="ru">Скачать OcrKk.exe</span><span lang="en">Download OcrKk.exe</span></a>
+      </div>
+    </div>
+    <div class="box req">
+      <h3><span lang="kk">Не керек</span><span lang="ru">Что нужно</span><span lang="en">Requirements</span></h3>
+      <dl>
+        <div><dt>Windows</dt><dd>Windows 11</dd></div>
+        <div><dt><span lang="kk">Пернетақта</span><span lang="ru">Клавиатура</span><span lang="en">Keyboard</span></dt><dd><span lang="kk">Windows-та ағылшын пернетақтасы қосулы болсын.</span><span lang="ru">В Windows должна быть английская раскладка.</span><span lang="en">Windows needs an English keyboard layout.</span></dd></div>
+        <div><dt><span lang="kk">Интернет</span><span lang="ru">Интернет</span><span lang="en">Internet</span></dt><dd><span lang="kk">Міндетті емес.</span><span lang="ru">Не обязателен.</span><span lang="en">Not required.</span></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- KEYS -->
+<section class="block" id="keys">
+  <div class="wrap">
+    <div class="eyebrow"><span lang="kk">Міндетті емес · тегін</span><span lang="ru">Необязательно · бесплатно</span><span lang="en">Optional · free</span></div>
+    <h2><span lang="kk">Тегін API кілттері: тіркестерді дәлірек аудару үшін</span><span lang="ru">Бесплатные API-ключи: для более точного перевода фраз</span><span lang="en">Free API keys: for more accurate phrase translation</span></h2>
+    <p class="muted gem-text"><span lang="kk">Кілтсіз де жұмыс істейді: жеке сөздер кіріктірілген сөздіктен, ал тіркестерді MyMemory аударады, бірақ сапасы төмен. Төмендегі қызметтердің кез келгенінен кілт алсаңыз, аударма мен түсініктеме жақсарады. Бір кілт жеткілікті, бірнешеуін қоссаңыз, бірі қолжетімсіз болғанда келесісі қосылады.</span><span lang="ru">Программа работает и без ключей: отдельные слова берутся из встроенного словаря, а фразы переводит MyMemory, но заметно хуже. Ключ любого из сервисов ниже улучшает перевод и объяснения. Достаточно одного. Если добавить несколько, при сбое одного подключится следующий.</span><span lang="en">The program works without keys: single words come from the built-in dictionary and phrases go to MyMemory, which translates noticeably worse. A key from any service below improves translation and explanations. One is enough; if you add several, the next one takes over when one fails.</span></p>
+    <div class="keys">
+      <article class="box keycard">
+        <h3>Gemini</h3>
+        <p class="tags"><span><span lang="kk">Ұсынылады</span><span lang="ru">Рекомендуем</span><span lang="en">Recommended</span></span><span><span lang="kk">Түсініктемемен</span><span lang="ru">С объяснениями</span><span lang="en">With explanations</span></span></p>
+        <ol class="ins">
+          <li><div><b><span lang="kk">Google AI Studio ашыңыз</span><span lang="ru">Откройте Google AI Studio</span><span lang="en">Open Google AI Studio</span></b><a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">aistudio.google.com/apikey</a> <span lang="kk">және Google аккаунтыңызбен кіріңіз.</span><span lang="ru">и войдите в аккаунт Google.</span><span lang="en">and sign in with your Google account.</span></div></li>
+          <li><div><b><span lang="kk">«Create API key» басыңыз</span><span lang="ru">Нажмите «Create API key»</span><span lang="en">Click “Create API key”</span></b><span lang="kk">Шарттарды қабылдап, пайда болған кілтті көшіріңіз.</span><span lang="ru">Примите условия и скопируйте появившийся ключ.</span><span lang="en">Accept the terms and copy the key that appears.</span></div></li>
+          <li><div><b><span lang="kk">Oinama-ға қойыңыз</span><span lang="ru">Вставьте в Oinama</span><span lang="en">Paste it into Oinama</span></b><span lang="kk">Науадағы белгіше → Баптаулар → Аударма → «Gemini API кілті».</span><span lang="ru">Значок в трее → Настройки → Перевод → «Ключ Gemini API».</span><span lang="en">Tray icon → Settings → Translation → “Gemini API key”.</span></div></li>
+          <li><div><b><span lang="kk">«Қозғалтқыштарды тексеру» басыңыз</span><span lang="ru">Нажмите «Проверить движки»</span><span lang="en">Click “Check engines”</span></b><span lang="kk">Жасыл белгі шықса, дайын.</span><span lang="ru">Если появится зелёная отметка, всё готово.</span><span lang="en">A green mark means it works.</span></div></li>
+        </ol>
+        <p class="small"><span lang="kk">Тегін тарифте лимит бар: flash моделі күніне шамамен 20 сұраныс береді, flash-lite көбірек. Google тегін тарифтегі сұраныстарды өз модельдерін жақсарту үшін қолдануы мүмкін.</span><span lang="ru">У бесплатного тарифа есть лимит: модель flash даёт около 20 запросов в день, flash-lite больше. Google может использовать запросы бесплатного тарифа для улучшения своих моделей.</span><span lang="en">The free tier has a limit: flash allows about 20 requests a day, flash-lite more. Google may use free-tier requests to improve its models.</span></p>
+      </article>
+
+      <article class="box keycard">
+        <h3>APInex</h3>
+        <p class="tags"><span><span lang="kk">Тегін модельдер</span><span lang="ru">Бесплатные модели</span><span lang="en">Free models</span></span><span><span lang="kk">Түсініктемемен</span><span lang="ru">С объяснениями</span><span lang="en">With explanations</span></span></p>
+        <ol class="ins">
+          <li><div><b><span lang="kk">Аккаунт жасаңыз</span><span lang="ru">Создайте аккаунт</span><span lang="en">Create an account</span></b><a href="https://apinex.bond/register" target="_blank" rel="noopener noreferrer">apinex.bond/register</a></div></li>
+          <li><div><b><span lang="kk">API кілтін көшіріңіз</span><span lang="ru">Скопируйте API-ключ</span><span lang="en">Copy your API key</span></b><span lang="kk">Тіркелгеннен кейін кілт жеке кабинетте беріледі.</span><span lang="ru">После регистрации ключ выдаётся в личном кабинете.</span><span lang="en">After sign-up the key is in your account.</span></div></li>
+          <li><div><b><span lang="kk">Oinama-ға қойыңыз</span><span lang="ru">Вставьте в Oinama</span><span lang="en">Paste it into Oinama</span></b><span lang="kk">Баптаулар → Аударма → «APInex API кілті».</span><span lang="ru">Настройки → Перевод → «Ключ APInex API».</span><span lang="en">Settings → Translation → “APInex API key”.</span></div></li>
+          <li><div><b><span lang="kk">«Модельдерді жүктеу» басыңыз</span><span lang="ru">Нажмите «Загрузить модели»</span><span lang="en">Click “Load models”</span></b><span lang="kk">«Тегін» деп белгіленген модельді таңдаңыз. Модель таңдалмаса, APInex қолданылмайды.</span><span lang="ru">Выберите модель с пометкой «бесплатно». Пока модель не выбрана, APInex не используется.</span><span lang="en">Pick a model marked “free”. Until a model is chosen, APInex is not used.</span></div></li>
+          <li><div><b><span lang="kk">«Қозғалтқыштарды тексеру» басыңыз</span><span lang="ru">Нажмите «Проверить движки»</span><span lang="en">Click “Check engines”</span></b></div></li>
+        </ol>
+        <p class="small"><span lang="kk">Ақылы модельдер есептегі қаражатты жұмсайды, сондықтан тек «тегін» белгісі барларын таңдаңыз.</span><span lang="ru">Платные модели списывают деньги с баланса, поэтому выбирайте только те, что помечены «бесплатно».</span><span lang="en">Paid models use up your balance, so choose only those marked “free”.</span></p>
+      </article>
+
+      <article class="box keycard">
+        <h3>DeepL</h3>
+        <p class="tags"><span><span lang="kk">Айына 500 000 таңба</span><span lang="ru">500 000 символов в месяц</span><span lang="en">500,000 characters a month</span></span><span><span lang="kk">Түсініктемесіз</span><span lang="ru">Без объяснений</span><span lang="en">No explanations</span></span></p>
+        <ol class="ins">
+          <li><div><b><span lang="kk">API Free тарифін таңдаңыз</span><span lang="ru">Выберите тариф API Free</span><span lang="en">Choose the API Free plan</span></b><a href="https://www.deepl.com/pro-api" target="_blank" rel="noopener noreferrer">deepl.com/pro-api</a> <span lang="kk">бетінде тіркеліңіз. Translator аккаунты болса, жаңасын ашыңыз.</span><span lang="ru">и зарегистрируйтесь. Если у вас уже есть аккаунт Translator, создайте новый.</span><span lang="en">and sign up. If you already have a Translator account, create a new one.</span></div></li>
+          <li><div><b><span lang="kk">Кілтті алыңыз</span><span lang="ru">Возьмите ключ</span><span lang="en">Get the key</span></b><a href="https://www.deepl.com/your-account/keys" target="_blank" rel="noopener noreferrer">deepl.com/your-account/keys</a> <span lang="kk">бетінде. Тегін кілт «:fx» деп аяқталады.</span><span lang="ru">Бесплатные ключи оканчиваются на «:fx».</span><span lang="en">Free keys end in “:fx”.</span></div></li>
+          <li><div><b><span lang="kk">Oinama-ға қойыңыз</span><span lang="ru">Вставьте в Oinama</span><span lang="en">Paste it into Oinama</span></b><span lang="kk">Баптаулар → Аударма → «DeepL API кілті».</span><span lang="ru">Настройки → Перевод → «Ключ DeepL API».</span><span lang="en">Settings → Translation → “DeepL API key”.</span></div></li>
+          <li><div><b><span lang="kk">«Қозғалтқыштарды тексеру» басыңыз</span><span lang="ru">Нажмите «Проверить движки»</span><span lang="en">Click “Check engines”</span></b></div></li>
+        </ol>
+        <p class="small"><span lang="kk">DeepL тіркелу кезінде банк картасын сұрауы мүмкін. Тегін тарифте ақша алынбайды, лимиттен асқанда аударма тоқтайды.</span><span lang="ru">При регистрации DeepL может попросить банковскую карту. На бесплатном тарифе деньги не списываются: при превышении лимита перевод просто останавливается.</span><span lang="en">DeepL may ask for a bank card at sign-up. The free plan does not charge you: when the limit is reached, translation simply stops.</span></p>
+      </article>
+    </div>
+    <p class="small keys-note"><span lang="kk">Кілттер тек сіздің компьютеріңізде шифрланып сақталады. Оларды ешкімге көрсетпеңіз.</span><span lang="ru">Ключи хранятся только на вашем компьютере в зашифрованном виде. Не показывайте их другим.</span><span lang="en">Keys are stored encrypted on your computer only. Never share them.</span></p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="block" id="faq">
+  <div class="wrap">
+    <div class="eyebrow"><span lang="kk">Сұрақтар</span><span lang="ru">Вопросы</span><span lang="en">Questions</span></div>
+    <h2><span lang="kk">Жиі қойылатын сұрақтар</span><span lang="ru">Частые вопросы</span><span lang="en">Frequently asked questions</span></h2>
+    <div class="faq">
+      <details>
+        <summary><span lang="kk">Фильмдер мен YouTube-та жұмыс істей ме?</span><span lang="ru">Работает ли в фильмах и на YouTube?</span><span lang="en">Does it work in films and on YouTube?</span></summary>
+        <p><span lang="kk">Иә. Субтитр көрінген сәтте <kbd>Alt</kbd>+<kbd>Q</kbd> басыңыз, ойындағыдай.</span><span lang="ru">Да. Нажмите <kbd>Alt</kbd>+<kbd>Q</kbd>, пока виден субтитр, как в игре.</span><span lang="en">Yes. Press <kbd>Alt</kbd>+<kbd>Q</kbd> while a subtitle is on screen, just like in a game.</span></p>
+      </details>
+      <details>
+        <summary><span lang="kk">Онлайн ойындарда қауіпсіз бе?</span><span lang="ru">Безопасно ли в онлайн-играх?</span><span lang="en">Is it safe in online games?</span></summary>
+        <p><span lang="kk">Кейбір онлайн ойындардың античит жүйелері бағдарламаны араласу деп санап, аккаунтты бұғаттауы мүмкін. Oinama-ны жеке ойындарда қолданыңыз, ал онлайн ойындарда өз тәуекеліңізбен.</span><span lang="ru">Античит некоторых онлайн-игр может принять программу за вмешательство и заблокировать аккаунт. Используйте Oinama в одиночных играх, а в онлайн-играх на свой риск.</span><span lang="en">The anti-cheat in some online games may treat the program as interference and ban your account. Use Oinama in single-player games, and in online games at your own risk.</span></p>
+      </details>
+      <details>
+        <summary><span lang="kk">Деректерім қайда сақталады?</span><span lang="ru">Где хранятся мои данные?</span><span lang="en">Where is my data stored?</span></summary>
+        <p><span lang="kk">Сақталған сөздер мен баптаулар бағдарламада, тек сіздің компьютеріңізде сақталады.</span><span lang="ru">Сохранённые слова и настройки хранятся в программе, локально на вашем компьютере.</span><span lang="en">Saved words and settings are stored in the program, locally on your computer.</span></p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer>
+    <span>Oinama 1.1.0 · Windows 11</span>
+    <span><span lang="kk">Кері байланыс:</span><span lang="ru">Обратная связь:</span><span lang="en">Feedback:</span> <a href="https://t.me/Aspanavt" target="_blank" rel="noopener noreferrer">Telegram @Aspanavt</a></span>
+    <span><a href="privacy.html"><span lang="kk">Құпиялылық саясаты</span><span lang="ru">Политика конфиденциальности</span><span lang="en">Privacy policy</span></a></span>
+    <span lang="kk">Офлайн сөздік: Wiktionary авторлары, kaikki.org (Wiktextract) арқылы, CC BY-SA 4.0.</span>
+    <span lang="ru">Офлайн-словарь: авторы Викисловаря через kaikki.org (Wiktextract), CC BY-SA 4.0.</span><span lang="en">Offline dictionary: Wiktionary contributors via kaikki.org (Wiktextract), CC BY-SA 4.0.</span>
+  </footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
