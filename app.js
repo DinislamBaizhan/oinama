@@ -1,4 +1,25 @@
 (function () {
+  // share (shown on phones: the app itself is for Windows PCs)
+  var SHARE_URL = "https://dinislambaizhan.github.io/oinama/";
+  var phone = window.matchMedia && window.matchMedia("(pointer: coarse)").matches;
+  var shareBtns = document.querySelectorAll(".share");
+  if (phone && shareBtns.length) {
+    shareBtns.forEach(function (b) { b.hidden = false; });
+    document.querySelectorAll(".share-note").forEach(function (n) { n.hidden = false; });
+  }
+  shareBtns.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var data = { title: "Oinama", url: SHARE_URL };
+      if (navigator.share) {
+        navigator.share(data).catch(function () {});
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(SHARE_URL).then(function () {
+          document.querySelectorAll(".share-done").forEach(function (n) { n.hidden = false; });
+        }, function () {});
+      }
+    });
+  });
+
   // language
   var body = document.body;
   function setLang(l) {

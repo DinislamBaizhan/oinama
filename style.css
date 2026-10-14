@@ -145,6 +145,12 @@ details p { padding-bottom: 18px; color: var(--muted); }
 
 footer { border-top: 1px solid var(--line); padding-block: 28px 40px; font-size: .85rem; color: var(--muted); display: grid; gap: 6px; }
 
+.btn .ms { flex: none; }
+button.btn { cursor: pointer; background: none; }
+[hidden] { display: none !important; }
+ol.ins + .cta { margin-top: 28px; }
+.share-note, .share-done { margin-top: 14px; max-width: 30em; }
+
 @media (max-width: 900px) {
   .hero, .install { grid-template-columns: minmax(0, 1fr); gap: 36px; }
   .keys { grid-template-columns: minmax(0, 1fr); }
