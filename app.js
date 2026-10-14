@@ -1,13 +1,4 @@
 (function () {
-  // Put the public download link here when it exists (GitHub Release, Google Drive...).
-  var DOWNLOAD_URL = "";
-
-  if (/^https:\/\//.test(DOWNLOAD_URL) && document.getElementById("dl-pending")) {
-    document.getElementById("dl-pending").hidden = true;
-    document.getElementById("dl-ready").hidden = false;
-    document.getElementById("dl-bottom").href = DOWNLOAD_URL;
-  }
-
   // language
   var body = document.body;
   function setLang(l) {
